@@ -1,6 +1,6 @@
 package junit
-import junit.framework.Assert.assertFalse
-import junit.framework.Assert.assertTrue
+import org.junit.Assert.assertFalse
+import org.junit.Assert.assertTrue
 import org.junit.Before
 import org.junit.Test
 import page.FindOwner
@@ -28,7 +28,8 @@ class OwnerTest : TestBase(){
         assertTrue(ownerList.isPageOpened())
         assertTrue(ownerList.numOfOwners() == 1)
 
-        ownerList.ownerHasData(0, mapOf( "name" to "George Franklin" , "address" to "110 W. Liberty St.", "city" to "Madison", "telephone" to "6085551023"))
+        ownerList.ownerHasData(0, mapOf( "name" to "George Franklin" , "address" to "110 W. Liberty St.", "city" to "Madison", "phone" to "6085551023"))
+        ownerList.ownerWithName(mapOf( "name" to "George Franklin" , "address" to "110 W. Liberty St.", "city" to "Madison", "phone" to "6085551023"))
     }
 
 }

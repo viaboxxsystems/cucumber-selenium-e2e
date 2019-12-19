@@ -1,7 +1,6 @@
 package steps
 
 import io.github.bonigarcia.wdm.WebDriverManager
-import org.junit.After
 import org.openqa.selenium.chrome.ChromeDriver
 
 abstract class StepBase {
@@ -12,9 +11,6 @@ abstract class StepBase {
         driver = ChromeDriver()
     }
 
-    @io.cucumber.java.After
-    fun teardown(){
-        driver.quit();
-    }
+
 
 }

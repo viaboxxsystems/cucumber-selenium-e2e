@@ -44,13 +44,19 @@ class OwnerListPage(driver: WebDriver) : PageObject(driver) {
 
     fun ownerHasData(num: Int, data: Map<String, String>) {
         val element = owners[num]
-        for ((k, v) in data) {
-           assertTrue(element.findElement(By.className("owner-$k")).text == v )
-        }
+        assertTrue( ownerMatches(element, data) )
+    }
+    fun ownerWithName(data: Map<String, String>) {
+        assertTrue(data.containsKey("name"))
+        val element = owners.filter {it.findElement(By.className("owner-name")).text == data["name"]}.first()
+        assertTrue( ownerMatches(element, data) )
     }
 
-
-    override fun navigateTo() {
+    private fun ownerMatches(owner: WebElement, data: Map<String, String>) :Boolean {
+        return  data.all { (k,v) -> owner.findElement(By.className("owner-$k")).text == v }
+    }
+        
+    override fun navigateTo() {                          
         navigateToRoot()
         clickFindOwners()
     }

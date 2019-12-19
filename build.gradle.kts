@@ -34,6 +34,12 @@ tasks {
 
 }
 
+task<Test>("cucumber") {
+    include("RunCucumberTest.class")
+}
+
+
+
 
 tasks.test {
     useJUnitPlatform()

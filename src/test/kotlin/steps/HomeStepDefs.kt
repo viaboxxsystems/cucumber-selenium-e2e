@@ -18,7 +18,10 @@ class HomeStepDefs : StepBase(){
         assertTrue((homePage.isPageOpened()))
     }
 
-
+    @io.cucumber.java.After
+    fun teardown(){
+        driver.quit();
+    }
 
 
 }

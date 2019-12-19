@@ -1,4 +1,5 @@
 package steps
+import io.cucumber.datatable.DataTable
 import io.cucumber.java.en.Given
 import io.cucumber.java.en.Then
 import io.cucumber.java.en.When
@@ -39,6 +40,19 @@ class OwnerListStepDefs : StepBase(){
         print(owners.numOfOwners())
         assertTrue(owners.numOfOwners() == num)
     }
+    
+    @Then("I expect to find owner(s)")
+    fun ownertable(arg : DataTable) {
+        assertTrue(findOwners.hasFoundOwner())
+        val owners = OwnerListPage(driver)
+        for(row in arg.asMaps()){
+           owners.ownerWithName(row)
+        }
+    }
 
+    @io.cucumber.java.After
+    fun teardown(){
+        driver.quit();
+    }
 
 }

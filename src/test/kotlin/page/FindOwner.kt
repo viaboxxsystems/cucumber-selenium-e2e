@@ -17,6 +17,10 @@ class FindOwner(driver: WebDriver) : PageObject(driver){
     @FindBy(xpath = "//button[@type='submit']")
     private val findOwnerButton: WebElement? = null
 
+    @FindBy(xpath = "//button[@type='submit']")
+    private val addOwnerLink: WebElement? = null
+
+
     @FindBy(xpath = "//input[@id='lastName']")
     private val searchField: WebElement? = null
 
