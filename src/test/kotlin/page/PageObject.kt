@@ -41,4 +41,8 @@ abstract class PageObject(val webDriver: WebDriver) {
         val wait = WebDriverWait(webDriver, 10)
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div/div/h2[contains(text(),'Welcome')]")))
     }
+
+    fun pageHeader(): String {
+        return header!!.text
+    }
 }

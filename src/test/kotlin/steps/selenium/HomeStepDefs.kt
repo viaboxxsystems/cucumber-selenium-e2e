@@ -1,9 +1,8 @@
-package steps
+package steps.selenium
 import io.cucumber.java.en.Given
 import io.cucumber.java.en.Then
 import org.junit.Assert.assertTrue
 import page.HomePage
-import steps.StepBase
 
 class HomeStepDefs : StepBase(){
     var homePage : HomePage = HomePage(driver)

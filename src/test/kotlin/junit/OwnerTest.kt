@@ -2,27 +2,29 @@ package junit
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
 import org.junit.Before
+import org.junit.Ignore
 import org.junit.Test
-import page.FindOwner
+import page.FindOwnerPage
 import page.OwnerListPage
 
+@Ignore
 class OwnerTest : TestBase(){
-    lateinit var findOwner : FindOwner
+    lateinit var findOwnerPage : FindOwnerPage
 
     @Before
     fun beforeEach() {
-        findOwner = FindOwner(driver)
-        findOwner.navigateTo()
+        findOwnerPage = FindOwnerPage(driver)
+        findOwnerPage.navigateTo()
     }
 
       
     @Test
     fun shouldNotFindOwner() {
-        findOwner.searchOwner("Blub")
-        assertFalse(findOwner.hasFoundOwner())
+        findOwnerPage.searchOwner("Blub")
+        assertFalse(findOwnerPage.hasFoundOwner())
 
-        findOwner.searchOwner("Franklin")
-        assertTrue(findOwner.hasFoundOwner())
+        findOwnerPage.searchOwner("Franklin")
+        assertTrue(findOwnerPage.hasFoundOwner())
 
         val ownerList = OwnerListPage(driver)
         assertTrue(ownerList.isPageOpened())

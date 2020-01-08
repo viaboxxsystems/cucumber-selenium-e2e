@@ -2,15 +2,18 @@ package junit
 
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
+import org.junit.Before
 import org.junit.BeforeClass
+import org.junit.Ignore
 import org.junit.Test
 import page.HomePage
 
 
+@Ignore
 class HomeTest : TestBase(){
     lateinit var homePage : HomePage
 
-    @BeforeClass
+    @Before
     fun beforeEach() {
         homePage = HomePage(driver)
         homePage.navigateTo()

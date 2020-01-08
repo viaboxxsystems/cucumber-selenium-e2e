@@ -12,7 +12,7 @@ import org.openqa.selenium.support.PageFactory
  * </p>
  */
 
-class FindOwner(driver: WebDriver) : PageObject(driver){
+class FindOwnerPage(driver: WebDriver) : PageObject(driver){
 
     @FindBy(xpath = "//button[@type='submit']")
     private val findOwnerButton: WebElement? = null

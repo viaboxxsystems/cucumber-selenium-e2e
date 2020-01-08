@@ -34,17 +34,15 @@ tasks {
 
 }
 
-task<Test>("cucumber") {
-    include("RunCucumberTest.class")
-}
-
-
-
-
+/*
 tasks.test {
     useJUnitPlatform()
     testLogging {
         events("passed", "skipped", "failed")
     }
 }
+
+ */
+
+ 
 

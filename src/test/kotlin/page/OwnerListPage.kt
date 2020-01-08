@@ -42,6 +42,11 @@ class OwnerListPage(driver: WebDriver) : PageObject(driver) {
         ownerLinks[num].click()
     }
 
+    fun clickOwnerDetails(name: String) {
+        val ownerWithName: WebElement = ownerLinks.first { it.text.contains(name) }
+        ownerWithName.click()
+    }
+
     fun ownerHasData(num: Int, data: Map<String, String>) {
         val element = owners[num]
         assertTrue( ownerMatches(element, data) )
