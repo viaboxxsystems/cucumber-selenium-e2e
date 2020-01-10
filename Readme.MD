@@ -3,8 +3,9 @@
 This  project requires a tweaked version of the Spring Boot Pet Clinic example. You can run it with the docker-compose.yml
 
 = Required Tools
-
-- Java 12
+- Docker for Mac
+- Java 12  
+-- Either through Oracle or use https://sdkman.io/
 - VSCode
 -- Extension "GitLens — Git supercharged": https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens
 -- Extension Cucumber:  https://marketplace.visualstudio.com/items?itemName=alexkrechik.cucumberautocomplete
