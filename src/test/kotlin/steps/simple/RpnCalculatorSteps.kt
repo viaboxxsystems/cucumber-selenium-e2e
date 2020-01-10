@@ -7,7 +7,7 @@ import io.cucumber.java.Scenario
 import io.cucumber.java.en.Given
 import io.cucumber.java.en.Then
 import io.cucumber.java.en.When
-import org.junit.jupiter.api.Assertions
+import org.junit.Assert
 
 class RpnCalculatorSteps {
     private var calc: RpnCalculator? = null
@@ -30,16 +30,12 @@ class RpnCalculatorSteps {
 
     @Then("the result is {int}")
     fun the_result_is(expected: Double) {
-        Assertions.assertEquals(expected, calc!!.value())
+        Assert.assertEquals(expected, calc!!.value())
     }
 
     @Before("not @foo")
     fun before(scenario: Scenario) {
         scenario.write("Runs before scenarios *not* tagged with @foo")
-    }
-
-    @After
-    fun after(scenario: Scenario) { // scenario.write("HELLLLOO");
     }
 
     @Given("the previous entries:")

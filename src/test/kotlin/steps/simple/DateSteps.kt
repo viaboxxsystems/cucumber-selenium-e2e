@@ -5,7 +5,7 @@ import io.cucumber.java.ParameterType
 import io.cucumber.java.en.Given
 import io.cucumber.java.en.Then
 import io.cucumber.java.en.When
-import org.junit.jupiter.api.Assertions
+import org.junit.Assert
 import java.time.LocalDate
 
 class DateSteps {
@@ -29,6 +29,6 @@ class DateSteps {
 
     @Then("^the result should be (yes|no)$")
     fun the_result_should_be(expectedResult: String?) {
-        Assertions.assertEquals(expectedResult, result)
+        Assert.assertEquals(expectedResult, result)
     }
 }

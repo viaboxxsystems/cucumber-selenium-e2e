@@ -7,12 +7,10 @@ import io.cucumber.java.ParameterType
 import io.cucumber.java.en.Given
 import io.cucumber.java.en.Then
 import io.cucumber.java.en.When
-import org.junit.jupiter.api.Assertions
+import org.junit.Assert
 import java.math.BigDecimal
 import java.util.*
 import java.util.function.Consumer
-import java.util.stream.Collectors
-import java.util.stream.Stream
 
 class ShoppingSteps {
     private val calc = RpnCalculator()
@@ -52,7 +50,7 @@ class ShoppingSteps {
 
     @Then("my change should be {}")
     fun my_change_should_be_(change: Int) {
-        Assertions.assertEquals(-calc.value()!!.toInt(), change)
+        Assert.assertEquals(-calc.value()!!.toInt(), change)
     }
 
     @Given("the following shopping list:")
@@ -78,7 +76,7 @@ class ShoppingSteps {
 
     @Then("price would be {int}")
     fun price_would_be(totalPrice: Int) {
-        Assertions.assertEquals(groceriesPrice, totalPrice)
+        Assert.assertEquals(groceriesPrice, totalPrice)
     }
 
     class Grocery {
@@ -94,10 +92,10 @@ class ShoppingSteps {
             this.name = name
         }
 
-        override fun equals(o: Any?): Boolean {
-            if (this === o) return true
-            if (o == null || javaClass != o.javaClass) return false
-            val grocery = o as Grocery
+        override fun equals(other: Any?): Boolean {
+            if (this === other) return true
+            if (other == null || javaClass != other.javaClass) return false
+            val grocery = other as Grocery
             return name == grocery.name
         }
     }
