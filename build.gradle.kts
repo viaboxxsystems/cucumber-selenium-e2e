@@ -36,6 +36,6 @@ tasks {
 configure<com.github.spacialcircumstances.gradle.ReportsPluginExtension> {      // JN -> The old groovy way also works   "cucumberReports {  "
     outputDir = file("build/")
     buildId = "0"
-    reports = files("build/cucumber/cucumber-report.json")
+    reports = files("build/cucumber-report.json")
 }
 
