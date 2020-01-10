@@ -1,0 +1,20 @@
+{
+	"folders": [
+		{
+			"path": "/Users/jnonnen/github/cucumber-workshop/cucumber-selenium-e2e"
+		}
+	],
+	"settings": {
+		"cucumberautocomplete.steps": [
+			"src/test/kotlin/steps/selenium/*.kt",
+			"src/test/kotlin/steps/simple/*.kt"
+		],
+		"cucumberautocomplete.syncfeatures": "src/test/resources/*.feature",
+		"cucumberautocomplete.strictGherkinCompletion": true,
+		"editor.quickSuggestions": {
+			"comments": false,
+			"strings": true,
+			"other": true
+		},
+	}
+}	

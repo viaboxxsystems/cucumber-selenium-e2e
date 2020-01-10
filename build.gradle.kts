@@ -1,5 +1,6 @@
 plugins {
     kotlin("jvm") version "1.3.61"
+    id("com.github.spacialcircumstances.gradle-cucumber-reporting") version "0.1.15"
 }
 
 group = "de.viaboxx"
@@ -11,9 +12,7 @@ repositories {
 
 dependencies {
     implementation(kotlin("stdlib-jdk8"))
-    //testImplementation("org.junit.jupiter", "junit-jupiter", "5.5.2")
     testImplementation("junit", "junit", "4.12")
-    //testImplementation("io.github.bonigarcia:selenium-jupiter:3.3.2")
     testImplementation("io.cucumber", "cucumber-java","5.0.0-RC4")
     testImplementation("io.cucumber", "cucumber-junit", "5.0.0-RC4")
     testImplementation("io.cucumber", "cucumber-junit-platform-engine", "5.0.0-RC4")
@@ -34,14 +33,9 @@ tasks {
 
 }
 
-
-/*
-tasks.test {
-    useJUnitPlatform()
-    testLogging {
-        events("passed", "skipped", "failed")
-    }
+configure<com.github.spacialcircumstances.gradle.ReportsPluginExtension> {      // JN -> The old groovy way also works   "cucumberReports {  "
+    outputDir = file("build/")
+    buildId = "0"
+    reports = files("build/cucumber/cucumber-report.json")
 }
-
-  */
 
