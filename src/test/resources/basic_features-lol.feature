@@ -1,13 +1,13 @@
-# language: en-lol
+# language: es
 @basic
 @lolz
-OH HAI: Basic Gherkin LoLz
+Característica: Basic Gherkin LoLz
 
-  MISHUN: Strings
-    I CAN HAZ I can haz "cheezburger"?
-    DEN I got "cheezburger"
+  Escenario: Strings
+    Dado I can haz "cheezburger"?
+    Entonces I got "cheezburger"
 
-  MISHUN: Ints
-    I CAN HAZ I can has 42?
-    DEN I got 42
-    BUT where the "cheezburger"?
+  Escenario: Ints
+    Dada I can has 42?
+    Entonces I got 42
+    Pero where the "cheezburger"?
