@@ -12,7 +12,7 @@ Feature: Basic Arithmetic
   Scenario: Another Addition
   # Try to change one of the values below to provoke a failure
     When I add 4 and 7
-    Then the result is 11
+    Then the result is 11 
 
   Scenario Outline: Many additions
     Given the previous entries:
