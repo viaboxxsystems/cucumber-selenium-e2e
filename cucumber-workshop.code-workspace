@@ -9,7 +9,7 @@
 			"src/integration-tests/kotlin/steps/*.kt",
 			"src/test/kotlin/steps/*.kt"
 		],
-		"cucumberautocomplete.syncfeatures": ["src/test/resources/*.feature", "src/integration-tests/resources/*.feature"]
+		"cucumberautocomplete.syncfeatures": "src/**.feature",
 		"cucumberautocomplete.strictGherkinCompletion": true,
 		"editor.quickSuggestions": {
 			"comments": false,

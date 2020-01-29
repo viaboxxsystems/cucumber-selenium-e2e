@@ -23,7 +23,13 @@ dependencies {
     testImplementation("org.seleniumhq.selenium", "selenium-support", "3.141.59")
 }
 
+val reportTask= task<de.javaansehz.CluecumberReportTask>("report"){
+    // ;
+}
 
+tasks.withType<Test>().configureEach {
+    outputs.upToDateWhen { false }  // disable test caching
+}
 tasks {
     compileKotlin {
         kotlinOptions.jvmTarget = "12"
@@ -32,9 +38,7 @@ tasks {
         kotlinOptions.jvmTarget = "12"
     }
     test {
-        doLast{
-            reportTask.run()
-        }
+        finalizedBy(reportTask)
     }
 
 }
@@ -51,9 +55,6 @@ sourceSets {
 }
 
 
-val reportTask= task<de.javaansehz.CluecumberReportTask>("report"){
-    // ;
-}
 
 
 val integrationTest = task<Test>("selenium") {

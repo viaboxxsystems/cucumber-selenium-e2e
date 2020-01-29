@@ -9,6 +9,7 @@ This  project requires a tweaked version of the Spring Boot Pet Clinic example. 
 - VSCode
 -- Extension "GitLens — Git supercharged": https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens
 -- Extension Cucumber:  https://marketplace.visualstudio.com/items?itemName=alexkrechik.cucumberautocomplete
+-- Extension "Gradle": https://marketplace.visualstudio.com/items?itemName=richardwillis.vscode-gradle
 
 - Open the VSCode workspace committed to git, this sets the correct pathts for the cucumber extension
 
