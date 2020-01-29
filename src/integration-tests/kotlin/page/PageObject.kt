@@ -7,10 +7,13 @@ import org.openqa.selenium.support.CacheLookup
 import org.openqa.selenium.support.FindBy
 import org.openqa.selenium.support.ui.ExpectedConditions
 import org.openqa.selenium.support.ui.WebDriverWait
-import utils.UtilResources
+import steps.SeleniumWeb
 
-abstract class PageObject(val webDriver: WebDriver) {
+abstract class PageObject  {
+    val webDriver: WebDriver = SeleniumWeb.driver
 
+    val rootURL= "http://localhost:8081"
+    
     @FindBy(xpath = "/html/body/div/div/h2")
     val header:  WebElement? = null
 
@@ -27,7 +30,7 @@ abstract class PageObject(val webDriver: WebDriver) {
     abstract fun navigateTo()
 
     fun navigateToRoot() {
-        webDriver.get(UtilResources.getProperties("pageURL"))
+        webDriver.get(rootURL)
     }
 
     fun clickFindOwners() {

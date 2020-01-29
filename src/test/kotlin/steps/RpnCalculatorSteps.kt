@@ -1,4 +1,4 @@
-package steps.simple
+package steps
 
 import io.cucumber.examples.java.RpnCalculator
 import io.cucumber.java.After
@@ -37,6 +37,7 @@ class RpnCalculatorSteps {
     fun before(scenario: Scenario) {
         scenario.write("Runs before scenarios *not* tagged with @foo")
     }
+    
 
     @Given("the previous entries:")
     fun thePreviousEntries(entries: List<Entry>) {

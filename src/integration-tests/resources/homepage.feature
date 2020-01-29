@@ -4,3 +4,4 @@ Feature: Homepage
   Scenario: Show Homepage 
     Given I navigate to the homepage
     Then I should see the homepage
+    

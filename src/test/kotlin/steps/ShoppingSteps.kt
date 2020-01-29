@@ -1,4 +1,4 @@
-package steps.simple
+package steps
 
 import io.cucumber.examples.java.RpnCalculator
 import io.cucumber.java.DataTableType
@@ -19,7 +19,10 @@ class ShoppingSteps {
     private var groceriesPrice = 0
     @DataTableType
     fun defineGrocery(entry: Map<String, String>): Grocery {
-        return Grocery(entry["name"], Price.fromString(entry["price"]))
+        return Grocery(
+            entry["name"],
+            Price.fromString(entry["price"])
+        )
     }
 
     @ParameterType(name = "amount", value = "\\d+\\.\\d+\\s[a-zA-Z]+")

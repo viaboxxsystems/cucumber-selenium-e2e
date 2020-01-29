@@ -1,4 +1,4 @@
-package steps.simple
+package steps
 
 import io.cucumber.java.en.But
 import io.cucumber.java.en.Given

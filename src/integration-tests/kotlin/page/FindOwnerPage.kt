@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver
 import org.openqa.selenium.WebElement
 import org.openqa.selenium.support.FindBy
 import org.openqa.selenium.support.PageFactory
+import steps.SeleniumWeb
 
 
 /**
@@ -12,8 +13,7 @@ import org.openqa.selenium.support.PageFactory
  * </p>
  */
 
-class FindOwnerPage(driver: WebDriver) : PageObject(driver){
-
+class FindOwnerPage : PageObject(){
     @FindBy(xpath = "//button[@type='submit']")
     private val findOwnerButton: WebElement? = null
 
@@ -27,10 +27,6 @@ class FindOwnerPage(driver: WebDriver) : PageObject(driver){
     @FindBy(xpath= "//p[text()[contains(., 'has not been found')]]")
     private val hasNotBeenFoundText: WebElement? = null
 
-    
-    init {
-        PageFactory.initElements(driver, this)
-    }
 
     fun searchOwner(name : String){
         searchField?.clear()

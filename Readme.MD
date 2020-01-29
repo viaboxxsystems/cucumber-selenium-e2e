@@ -16,3 +16,5 @@ This  project requires a tweaked version of the Spring Boot Pet Clinic example. 
 = Notes
 
 CUCUMBER_OPTIONS='--tags "@basic"' gradle test
+
+CUCUMBER_OPTIONS='--tags "@basic and not @lolz"' gradle test

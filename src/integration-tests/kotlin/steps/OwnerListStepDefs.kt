@@ -1,4 +1,4 @@
-package steps.selenium
+package steps
 import io.cucumber.datatable.DataTable
 import io.cucumber.java.en.Given
 import io.cucumber.java.en.Then
@@ -8,52 +8,45 @@ import org.junit.Assert.assertTrue
 import page.FindOwnerPage
 import page.OwnerDetailsPage
 import page.OwnerListPage
+import steps.LivePageObjects.findOwnerPage
+import steps.LivePageObjects.ownerListPage
 
-class OwnerListStepDefs : StepBase(){
-    var findOwnersPage = FindOwnerPage(driver)
-    var owners = OwnerListPage(driver)
-    var ownerDetails = OwnerDetailsPage(driver)
-
+class OwnerListStepDefs {
     @Given("I navigate to Find Owner")
     fun beforeEach() {
-        findOwnersPage.navigateTo()
+        findOwnerPage().navigateTo()
     }
 
     @When("I search for a owner with name {string}")
     fun shouldSearchforOwner(name : String) {
-        findOwnersPage.searchOwner(name)
+        findOwnerPage().searchOwner(name)
     }
 
     @Then("I expect to find no owner")
     fun foundNoOwner() {
-        assertFalse(findOwnersPage.hasFoundOwner())
+        assertFalse(findOwnerPage().hasFoundOwner())
     }
 
     @Then("I expect to find {int} owner(s)")
     fun foundOwner(num: Int) {
-        assertTrue(findOwnersPage.hasFoundOwner())
-        val owners = OwnerListPage(driver)
-        print(owners.numOfOwners())
-        assertTrue(owners.numOfOwners() == num)
+        assertTrue(findOwnerPage().hasFoundOwner())
+
+        print(ownerListPage().numOfOwners())
+        assertTrue(ownerListPage().numOfOwners() == num)
     }
     
     @Then("I expect to find the owner(s)")
     fun ownertable(arg : DataTable) {
-        assertTrue(findOwnersPage.hasFoundOwner())
-
+        assertTrue(findOwnerPage().hasFoundOwner())
         for(row in arg.asMaps()){
-           owners.ownerWithName(row)
+            ownerListPage().ownerWithName(row)
         }
     }
 
     @Then("I see the owner list page")
     fun should_match_page_header(){
-       assertTrue( findOwnersPage.pageHeader() == "Owners")
+       assertTrue( findOwnerPage().pageHeader() == "Owners")
     }
 
-    @io.cucumber.java.After
-    fun teardown(){
-        driver.quit();
-    }
 
 }

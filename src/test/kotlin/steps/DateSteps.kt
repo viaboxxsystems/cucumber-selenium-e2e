@@ -1,4 +1,4 @@
-package steps.simple
+package steps
 
 import io.cucumber.examples.java.DateCalculator
 import io.cucumber.java.ParameterType
@@ -9,6 +9,7 @@ import org.junit.Assert
 import java.time.LocalDate
 
 class DateSteps {
+    
     private var result: String? = null
     private var calculator: DateCalculator? = null
 

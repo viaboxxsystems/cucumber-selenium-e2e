@@ -8,6 +8,7 @@ import org.openqa.selenium.support.FindAll
 import org.openqa.selenium.support.FindBy
 import org.openqa.selenium.support.FindBys
 import org.openqa.selenium.support.PageFactory
+import steps.SeleniumWeb
 
 
 /**
@@ -16,18 +17,12 @@ import org.openqa.selenium.support.PageFactory
  * </p>
  */
 
-class OwnerListPage(driver: WebDriver) : PageObject(driver) {
-
-
+class OwnerListPage : PageObject() {
     @FindBys(FindBy(xpath = "//a[@class='owner-name']"))
     private val ownerLinks: List<WebElement> = emptyList()
 
     @FindBys(FindBy(xpath = "//tr[@class='owner']"))
     private val owners: List<WebElement> = emptyList()
-
-    init {
-        PageFactory.initElements(driver, this)
-    }
 
 
     fun isPageOpened(): Boolean {

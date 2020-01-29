@@ -6,10 +6,10 @@
 	],
 	"settings": {
 		"cucumberautocomplete.steps": [
-			"src/test/kotlin/steps/selenium/*.kt",
-			"src/test/kotlin/steps/simple/*.kt"
+			"src/integration-tests/kotlin/steps/*.kt",
+			"src/test/kotlin/steps/*.kt"
 		],
-		"cucumberautocomplete.syncfeatures": "src/test/resources/*.feature",
+		"cucumberautocomplete.syncfeatures": ["src/test/resources/*.feature", "src/integration-tests/resources/*.feature"]
 		"cucumberautocomplete.strictGherkinCompletion": true,
 		"editor.quickSuggestions": {
 			"comments": false,

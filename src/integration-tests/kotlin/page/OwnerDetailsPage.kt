@@ -1,9 +1,14 @@
 package page
 
+import org.openqa.selenium.By
 import org.openqa.selenium.WebDriver
 import org.openqa.selenium.WebElement
 import org.openqa.selenium.support.FindBy
 import org.openqa.selenium.support.PageFactory
+import org.openqa.selenium.support.ui.ExpectedConditions
+import org.openqa.selenium.support.ui.WebDriverWait
+import steps.LivePageObjects
+import steps.SeleniumWeb
 
 
 /**
@@ -12,9 +17,7 @@ import org.openqa.selenium.support.PageFactory
  * </p>
  */
 
-class OwnerDetailsPage(driver: WebDriver) : PageObject(driver) {
-
-
+class OwnerDetailsPage : PageObject() {
     @FindBy(xpath = "//*[@id='first-name']")
     private val firstName: WebElement? = null
 
@@ -30,9 +33,8 @@ class OwnerDetailsPage(driver: WebDriver) : PageObject(driver) {
     @FindBy(xpath = "//")
     private val phone: WebElement? = null
 
-    init {
-        PageFactory.initElements(driver, this)
-    }
+    @FindBy(xpath="//*[@id='edit-owner-button']")
+    private val editButton: WebElement?= null
 
     fun getLastName(): String {
         return lastName!!.text
@@ -40,6 +42,19 @@ class OwnerDetailsPage(driver: WebDriver) : PageObject(driver) {
     fun getFirstName(): String {
         return firstName!!.text
     }
+
+    fun getStreet(): String {
+        return address!!.text
+    }
+    fun getCity(): String {
+        return city!!.text
+    }
+
+    fun getPhoneNumber(): String {
+        return phone!!.text
+    }
+
+
 
     fun getFullName(): String {
         return "${getFirstName()} ${getLastName()}"
@@ -52,10 +67,8 @@ class OwnerDetailsPage(driver: WebDriver) : PageObject(driver) {
     fun navigateTo(lastname: String) {
         navigateToRoot()
         clickFindOwners()
-        val findOwner = FindOwnerPage(webDriver)
-        findOwner.searchOwner(lastname)
-        val  ownerListPage = OwnerListPage(webDriver)
-        ownerListPage.clickOwnerDetails(lastname)
+        LivePageObjects.findOwnerPage().searchOwner(lastname)
+        LivePageObjects.ownerListPage().clickOwnerDetails(lastname)
     }
 
     override fun navigateTo() {
