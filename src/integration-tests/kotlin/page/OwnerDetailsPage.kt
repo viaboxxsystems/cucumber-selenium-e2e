@@ -31,7 +31,7 @@ class OwnerDetailsPage : PageObject() {
     private val city: WebElement? = null
 
     @FindBy(xpath = "//")
-    private val phone: WebElement? = null
+    private val telephone: WebElement? = null
 
     @FindBy(xpath="//*[@id='edit-owner-button']")
     private val editButton: WebElement?= null
@@ -51,7 +51,7 @@ class OwnerDetailsPage : PageObject() {
     }
 
     fun getPhoneNumber(): String {
-        return phone!!.text
+        return telephone!!.text
     }
 
 
