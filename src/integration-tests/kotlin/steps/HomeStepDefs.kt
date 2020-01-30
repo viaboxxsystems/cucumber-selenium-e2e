@@ -1,18 +1,12 @@
 package steps
 import io.cucumber.java.AfterStep
-import io.cucumber.java.BeforeStep
 import io.cucumber.java.Scenario
 import io.cucumber.java.en.Given
 import io.cucumber.java.en.Then
-import org.junit.AfterClass
 import org.junit.Assert.assertTrue
 import org.openqa.selenium.OutputType
 import org.openqa.selenium.TakesScreenshot
-import org.openqa.selenium.support.PageFactory
-import page.FindOwnerPage
-import page.HomePage
-import page.OwnerListPage
-import steps.LivePageObjects.homePage
+import steps.PageObjects.homePage
 
 class HomeStepDefs {
 

@@ -5,11 +5,8 @@ import io.cucumber.java.en.Then
 import io.cucumber.java.en.When
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
-import page.FindOwnerPage
-import page.OwnerDetailsPage
-import page.OwnerListPage
-import steps.LivePageObjects.findOwnerPage
-import steps.LivePageObjects.ownerListPage
+import steps.PageObjects.findOwnerPage
+import steps.PageObjects.ownerListPage
 
 class OwnerListStepDefs {
     @Given("I navigate to Find Owner")

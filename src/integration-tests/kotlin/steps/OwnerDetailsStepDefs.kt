@@ -2,12 +2,9 @@ package steps
 import io.cucumber.java.en.Given
 import io.cucumber.java.en.Then
 import org.junit.Assert.assertTrue
-import page.FindOwnerPage
-import page.OwnerDetailsPage
-import page.OwnerListPage
-import steps.LivePageObjects.findOwnerPage
-import steps.LivePageObjects.ownerDetailsPage
-import steps.LivePageObjects.ownerListPage
+import steps.PageObjects.findOwnerPage
+import steps.PageObjects.ownerDetailsPage
+import steps.PageObjects.ownerListPage
 
 class OwnerDetailsStepDefs {
     @Given("I open the owner with name {string}")

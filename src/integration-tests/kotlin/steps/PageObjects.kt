@@ -11,7 +11,7 @@ import page.OwnerListPage
  * Author: Jan Nonnen
  * </p>
  */
-object LivePageObjects {
+object PageObjects {
     fun homePage(): HomePage = PageFactory.initElements(SeleniumWeb.driver, HomePage::class.java)
     fun findOwnerPage() =  PageFactory.initElements(SeleniumWeb.driver, FindOwnerPage::class.java)
     fun ownerListPage() =  PageFactory.initElements(SeleniumWeb.driver, OwnerListPage::class.java)
